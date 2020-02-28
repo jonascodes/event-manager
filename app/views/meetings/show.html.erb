@@ -1,0 +1,21 @@
+<h3>Meeting</h3>
+<p>
+    <b>Organizer: </b><a href="<%= user_path(@user) %>"><%= @user.username %></a>
+    <br><br>
+    <b>Event:</b> <%= @meeting.title %>
+    <br>
+    <b>Location:</b> <%= @meeting.location %>
+    <br>
+    <b>Starts at:</b> <%= @meeting.datetime %>
+</p>
+<p>
+    <b>Guests:</b>
+    <% @meeting.guests.each_with_index do |guest,index| %>
+        <br>Guest <%= index + 1 %>: <%= User.find(guest.user_id).username %> (<a href="">remove</a>)
+    <% end %>
+    <p>
+        <b>Add a guest</b>
+        
+    </p>
+</p>
+

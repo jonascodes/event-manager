@@ -1,0 +1,15 @@
+<%= form_with model: @meeting do |f| %>
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :location %>
+    <br>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label "Starts at:" %>
+    <br>
+    <%= f.datetime_select :datetime %>
+    <br><br>
+    <%= f.submit "Create meeting" %>
+<% end %>

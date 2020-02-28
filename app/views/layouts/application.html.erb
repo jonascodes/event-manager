@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EventManager</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if @user = User.find_by(id: session[:user]) %>
+      <p>Logged in as: <%= @user.username %> | <a href="/logout">logout</a></p>
+    <% else %>
+      No active user | <a href="/login">Login</a></p>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
